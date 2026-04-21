@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import * as path from "path";
 import * as fs from "fs";
 import pluginTerser from "@rollup/plugin-terser";
+import sourcemaps from "rollup-plugin-sourcemaps";
 import * as packageJson from "./package.json";
 
 // const generateTSNamespace = (dts: Map<string, string>) => {
@@ -43,31 +44,7 @@ export default defineConfig({
         {
           entryFileNames: `index.mjs`,
           format: "es",
-          sourcemap: true,
-          globals: {
-            three: "THREE",
-          },
-        },
-        {
-          entryFileNames: `index.cjs`,
-          format: "cjs",
-          sourcemap: true,
-          globals: {
-            three: "THREE",
-          },
-        },
-        {
-          entryFileNames: `index.min.mjs`,
-          plugins: [pluginTerser()],
-          format: "es",
-          globals: {
-            three: "THREE",
-          },
-        },
-        {
-          entryFileNames: `index.min.cjs`,
-          plugins: [pluginTerser()],
-          format: "cjs",
+          plugins: [sourcemaps()],
           globals: {
             three: "THREE",
           },

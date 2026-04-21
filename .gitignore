@@ -128,7 +128,7 @@ out
 .yarn/install-state.gz
 .pnp.*
 .idea/
-dist/
+
 resources/ifc/test
 resources/frags/test
 
