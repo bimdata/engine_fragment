@@ -16,6 +16,8 @@
     "publish-repo": "yarn workspace @thatopen/fragments publish-repo",
     "reset-release-please": "git commit --allow-empty -m \"chore: release 2.0.0\" -m \"Release-As: 2.0.0\""
   },
+  "module": "packages/fragments/dist/index.mjs",
+  "main": "packages/fragments/dist/index.mjs",
   "license": "MIT",
   "homepage": "https://github.com/ThatOpen/engine_components#readme",
   "bugs": {
