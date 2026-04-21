@@ -228,7 +228,6 @@ export class VirtualTilesController {
 
   async update(time: number) {
     this.updateTiles(time);
-    this.notifyUpdateFinished();
     for (const tileId of this._tilesChanged) {
       const tile = this._tiles.get(tileId) as TileData;
       this._meshConnection.process({
@@ -242,6 +241,8 @@ export class VirtualTilesController {
       });
     }
     this._tilesChanged.clear();
+
+    this.notifyUpdateFinished();
   }
 
   raycast(
